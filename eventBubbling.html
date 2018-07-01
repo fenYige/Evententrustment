@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul1">
+    <li>云南</li>
+    <li>四川</li>
+    <li>山西</li>
+    <li>山东</li>
+</ul>
+
+　
+<script>
+    function foo(){
+        var Oul=document.getElementById('ul1');
+        Oul.onclick=function(ev){
+            var ev=ev || window.event;  //兼容ie和非ie
+            var target=ev.target || ev.srcElement; //ie和非ie事件对象
+            if(target.nodeName.toLowerCase() == 'li'){
+                target.style.background="red"; 
+            }
+
+        }
+    }
+
+
+    foo();
+    
+
+
+
+    
+
+</script>
+</body>
+</html>
