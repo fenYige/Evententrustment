@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<ul id="ul1">
+<ul id="ul1" style="cursor:point">
     <li>云南</li>
     <li>四川</li>
     <li>山西</li>
@@ -19,8 +19,17 @@
         Oul.onclick=function(ev){
             var ev=ev || window.event;  //兼容ie和非ie
             var target=ev.target || ev.srcElement; //ie和非ie事件对象
+            let borthers=target.parentNode.children;
             if(target.nodeName.toLowerCase() == 'li'){
-                target.style.background="red"; 
+                for(let i=0;i<borthers.length;i++){
+                    if(target!=borthers[i]){
+                        borthers[i].style.background="white"
+                        target.style.background="red"
+                    }
+                }
+               // target.style.background="red"; 
+               //alert(target)
+              // console.log(target.parentNode.children.splice())
             }
 
         }
